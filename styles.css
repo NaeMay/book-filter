@@ -1,0 +1,182 @@
+:root {
+  --maga-red: #b22234; /* Classic MAGA red */
+  --maga-white: #ffffff; /* White */
+  --maga-blue: #3c3b6e; /* Navy blue for modern tech */
+  --dark-green: #00471b; /* Keep your original for accents */
+  --gold: #feac32; /* Gold for highlights */
+  --light-gold: #fecc4c;
+  --light-grey: #f5f5f5;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background: linear-gradient(
+    135deg,
+    var(--maga-white) 0%,
+    var(--maga-blue) 50%,
+    var(--maga-red) 100%
+  ); /* Modern sleek gradient with MAGA colors */
+  font-family: "Orbitron", monospace; /* Futuristic font */
+  margin: 0;
+  padding: 20px;
+  color: var(--maga-white);
+}
+
+.app {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: var(--maga-white);
+  font-size: 2em;
+  margin: 10px 0;
+  font-weight: 900; /* Bold futuristic weight */
+  animation: glitch 1s linear infinite; /* Glitch effect */
+  position: relative;
+  text-shadow: 0.05em 0 0 var(--maga-red), -0.025em -0.05em 0 var(--maga-blue),
+    0.025em 0.05em 0 var(--maga-red); /* Glitch shadows */
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    text-shadow: 0.05em 0 0 var(--maga-red), -0.025em -0.05em 0 var(--maga-blue),
+      0.025em 0.05em 0 var(--maga-red);
+  }
+  10% {
+    text-shadow: 0.05em 0 0 var(--maga-blue), -0.025em -0.05em 0 var(--maga-red),
+      0.025em 0.05em 0 var(--maga-blue);
+  }
+  20% {
+    text-shadow: 0.05em 0 0 var(--maga-red),
+      -0.025em -0.05em 0 var(--maga-white), 0.025em 0.05em 0 var(--maga-red);
+  }
+  30% {
+    text-shadow: 0.05em 0 0 var(--maga-blue), -0.025em -0.05em 0 var(--maga-red),
+      0.025em 0.05em 0 var(--maga-white);
+  }
+  40%,
+  60%,
+  80%,
+  100% {
+    text-shadow: 0.05em 0 0 var(--maga-red), -0.025em -0.05em 0 var(--maga-blue),
+      0.025em 0.05em 0 var(--maga-red);
+  }
+  50% {
+    text-shadow: 0.05em 0 0 var(--maga-white),
+      -0.025em -0.05em 0 var(--maga-red), 0.025em 0.05em 0 var(--maga-blue);
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.book-card {
+  border: 5px solid var(--gold);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: var(--maga-blue);
+  color: var(--maga-white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.book-card:focus-within {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.book-card h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  color: var(--gold);
+}
+
+.book-card p {
+  font-size: 1em;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+  .book-card {
+    width: 300px;
+  }
+}
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  background-color: var(--maga-blue);
+  color: var(--maga-white);
+  border-top: 3px solid var(--maga-red);
+}
+
+footer h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  color: var(--light-gold);
+  font-size: 1.2em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--maga-red);
+}
+
+.social-links i {
+  font-size: 1.5em;
+}
+
+@media (max-width: 600px) {
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+** end of styles.css **
+
