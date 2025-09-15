@@ -1,7 +1,4 @@
-** start of script.js **
-
 const books = [
-  // FoodTech & Culinary
   {
     title: "On Food and Cooking: The Science and Lore of the Kitchen",
     authorName: "Harold McGee",
@@ -26,7 +23,6 @@ const books = [
     releaseYear: 2015,
     category: "FoodTech"
   },
-  // Donald Trump (Leadership & Business)
   {
     title: "The Art of the Deal",
     authorName: "Donald Trump, Tony Schwartz",
@@ -45,14 +41,12 @@ const books = [
     releaseYear: 2016,
     category: "Patriotic"
   },
-  // Sun Tzu (Strategy)
   {
     title: "The Art of War",
     authorName: "Sun Tzu",
     releaseYear: 2005,
     category: "Strategy"
   },
-  // Elon Musk (Tech & Innovation)
   {
     title: "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
     authorName: "Ashlee Vance",
@@ -65,7 +59,6 @@ const books = [
     releaseYear: 2016,
     category: "Tech"
   },
-  // Tech Books
   {
     title: "Clean Code: A Handbook of Agile Software Craftsmanship",
     authorName: "Robert C. Martin",
@@ -84,7 +77,6 @@ const books = [
     releaseYear: 2017,
     category: "Tech"
   },
-  // Security Tech Books
   {
     title: "Hacking: The Art of Exploitation",
     authorName: "Jon Erickson",
@@ -103,10 +95,8 @@ const books = [
     releaseYear: 2019,
     category: "Security Tech"
   },
-  // Patriotic Books for America
   {
-    title:
-      "American Nations: A History of the Eleven Rival Regional Cultures of North America",
+    title: "American Nations: A History of the Eleven Rival Regional Cultures of North America",
     authorName: "Colin Woodard",
     releaseYear: 2011,
     category: "Patriotic"
@@ -139,9 +129,12 @@ const filteredBooks = books
   .filter((book) => book.releaseYear > 1950)
   .sort(sortByYear);
 
-// Render books to DOM
 function displayBooks() {
   const bookList = document.getElementById("book-list");
+  if (!bookList) {
+    console.error("Error: Element with ID 'book-list' not found");
+    return;
+  }
   bookList.innerHTML = ""; // Clear existing content
   filteredBooks.forEach((book) => {
     const bookCard = document.createElement("div");
@@ -157,9 +150,12 @@ function displayBooks() {
   });
 }
 
-// Initialize display
-displayBooks();
-
-// Console log for verification
-console.log("PatriotPlates AI Book Catalog initialized:", filteredBooks);
-
+// Run after DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+  try {
+    displayBooks();
+    console.log("PatriotPlates AI Book Catalog initialized:", filteredBooks);
+  } catch (error) {
+    console.error("Error initializing book catalog:", error);
+  }
+});
